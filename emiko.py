@@ -80,7 +80,7 @@ async def on_message(message):
             print("Updating...")
             call(["git", "pull"])
             print("Restarting...")
-            call(["python", "emiko.py"])
+            call(["run.bat"])
             quit()
 
     # Restart command
@@ -91,7 +91,7 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "brb")
             print("Restarting...")
-            call(["python", "emiko.py"])
+            call(["run.bat"])
             quit()
 
 # Client ready handler
