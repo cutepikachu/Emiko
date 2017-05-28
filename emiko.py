@@ -77,8 +77,10 @@ async def on_message(message):
             await client.send_message(message.channel, line)
         else:
             await client.send_message(message.channel, "Updating, brb")
+            print("Updating...")
             call(["git", "pull"])
-            call(["python", "emoko.py"])
+            print("Restarting...")
+            call(["python", "emiko.py"])
             quit()
 
     # Restart command
@@ -88,7 +90,8 @@ async def on_message(message):
             await client.send_message(message.channel, line)
         else:
             await client.send_message(message.channel, "brb")
-            call(["python", "emoko.py"])
+            print("Restarting...")
+            call(["python", "emiko.py"])
             quit()
 
 # Client ready handler
