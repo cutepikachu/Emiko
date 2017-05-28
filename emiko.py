@@ -63,7 +63,7 @@ async def on_message(message):
 
     # Exit command
     if message.content == "+exit" or message.content == "+quit":
-        if not message.author.id = "235019900618407937":
+        if not message.author.id == "235019900618407937":
             line = random.choice(open('responses_unauthorised.txt').readlines())
             await client.send_message(message.channel, line)
         else:
@@ -72,7 +72,7 @@ async def on_message(message):
 
     # Update command, for easy updating
     if message.content == "+update":
-        if not message.author.id = "235019900618407937":
+        if not message.author.id == "235019900618407937":
             line = random.choice(open('responses_unauthorised.txt').readlines())
             await client.send_message(message.channel, line)
         else:
