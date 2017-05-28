@@ -39,15 +39,26 @@ async def on_message(message):
         await client.send_message(message.channel, "Pong!")
 
     # Sex command
-    if message.content == "+sex" or message.content == "+fuck":
-        if not message.author.id == "235019900618407937":
-            await client.send_message(message.channel, "ew, get that thing away from me!")
+    #if message.content == "+sex" or message.content == "+fuck":
+    #    if not message.author.id == "235019900618407937":
+    #        await client.send_message(message.channel, "ew, get that thing away from me!")
 
     # Poke command
     if message.content == "+poke" or message.content == "+touch":
         line = random.choice(open('responses_poke.txt').readlines())
         await client.send_message(message.channel, line)
 
+    # Lick command (??) thanks nikitpad
+    if message.content == "+lick":
+        if not message.author.id == "235019900618407937":
+            await client.send_message(message.channel, "Eww, wtf are you doing?")
+        else:
+            await client.send_message(message.channel, "Hehe, that feels nice!")
+
+    # Echo command
+    if message.content.startswith("+echo"):
+        fuck = message.content.split()
+        await client.send_message(message.channel, fuck[1])
 
 # Client ready handler
 @client.event
