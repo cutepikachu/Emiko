@@ -7,6 +7,7 @@ import discord
 import random
 import logging
 import asyncio
+from subprocess import call
 
 # Set up logging, to discord.log
 logger=logging.getLogger('discord')
@@ -59,6 +60,36 @@ async def on_message(message):
     if message.content.startswith("+echo"):
         fuck = message.content.split()
         await client.send_message(message.channel, fuck[1])
+
+    # Exit command
+    if message.content == "+exit" or message.content == "+quit":
+        if not message.author.id = "235019900618407937":
+            line = random.choice(open('responses_unauthorised.txt').readlines())
+            await client.send_message(message.channel, line)
+        else:
+            await client.send_message(message.channel, "See you later!")
+            quit()
+
+    # Update command, for easy updating
+    if message.content == "+update":
+        if not message.author.id = "235019900618407937":
+            line = random.choice(open('responses_unauthorised.txt').readlines())
+            await client.send_message(message.channel, line)
+        else:
+            await client.send_message(message.channel, "Updating, brb")
+            call(["git", "pull"])
+            call(["python", "emoko.py"])
+            quit()
+
+    # Restart command
+    if message.content == "+restart":
+        if not message.author.id == "235019900618407937":
+            line = random.choice(open('responses_unauthorised.txt').readlines())
+            await client.send_message(message.channel, line)
+        else:
+            await client.send_message(message.channel, "brb")
+            call(["python", "emoko.py"])
+            quit()
 
 # Client ready handler
 @client.event
