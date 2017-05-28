@@ -94,6 +94,15 @@ async def on_message(message):
             call(["run.bat"])
             quit()
 
+    # Set game command
+    if message.content.startswith("+setgame"):
+        if not message.author.id == "235019900618407937":
+            line = random.choice(open('responses_unauthorised.txt').readlines())
+            await client.send_message(message.channel, line)
+        else:
+            blah = message.content.split(':')
+            await client.change_presence(game=discord.Game(name=blah[1], type=1))
+
 
 # Client ready handler
 @client.event
