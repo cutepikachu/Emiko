@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Bot token file
+token.txt
+
 # C extensions
 *.so
 

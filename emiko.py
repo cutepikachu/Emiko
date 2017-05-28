@@ -17,6 +17,9 @@ logger.addHandler(handler)
 # Initialise the client
 client = discord.Client()
 
+# Get the token from token.txt
+token = open('token.txt').readline()
+
 # Message handler
 @client.event
 async def on_message(message):
@@ -28,3 +31,15 @@ async def on_message(message):
     if message.content == "+pet":
         line = random.choice(open('responses_pet.txt').readlines())
         await client.send_message(message.channel, line)
+
+# Client ready handler
+@client.event
+async def on_ready():
+    print("Connected to Discord!")
+    print("-------")
+    print("Bot: " + client.user.name)
+    print("Client id:" + client.user.id)
+    print("-------")
+
+# Actually log in
+client.run(token)
