@@ -44,10 +44,10 @@ async def on_message(message):
             await client.send_message(message.channel, "ew, get that thing away from me!")
 
     # Poke command
-    if message.content == "+poke":
+    if message.content == "+poke" or message.content == "+touch":
         line = random.choice(open('responses_poke.txt').readlines())
         await client.send_message(message.channel, line)
-        
+
 
 # Client ready handler
 @client.event
