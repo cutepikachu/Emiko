@@ -58,7 +58,7 @@ async def on_message(message):
 
     # Echo command
     if message.content.startswith("+echo"):
-        fuck = message.content.split(':')
+        fuck = message.content.split('=')
         await client.send_message(message.channel, fuck[1])
 
     # Exit command
