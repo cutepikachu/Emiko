@@ -58,7 +58,7 @@ async def on_message(message):
 
     # Echo command
     if message.content.startswith("+echo"):
-        fuck = message.content.split(':')
+        fuck = message.content.split('=')
         await client.send_message(message.channel, fuck[1])
 
     # Exit command
@@ -101,7 +101,7 @@ async def on_message(message):
             await client.send_message(message.channel, line)
         else:
             blah = message.content.split(':')
-            await client.change_presence(game=discord.Game(name=blah[1], type=1))
+            await client.change_presence(game=discord.Game(name=blah[1]))
 
 
 # Client ready handler
