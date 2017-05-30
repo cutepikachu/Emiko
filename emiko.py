@@ -39,10 +39,7 @@ async def on_message(message):
     if message.content == "+ping":
         await client.send_message(message.channel, "Pong!")
 
-    # Sex command
-    #if message.content == "+sex" or message.content == "+fuck":
-    #    if not message.author.id == "235019900618407937":
-    #        await client.send_message(message.channel, "ew, get that thing away from me!")
+
 
     # Poke command
     if message.content == "+poke" or message.content == "+touch":
