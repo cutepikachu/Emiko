@@ -49,12 +49,6 @@ async def on_message(message):
         line = random.choice(open('responses_poke.txt').readlines())
         await client.send_message(message.channel, line)
 
-    # Lick command (??) thanks nikitpad
-    if message.content == "+lick":
-        if not message.author.id == "235019900618407937":
-            await client.send_message(message.channel, "Eww, wtf are you doing?")
-        else:
-            await client.send_message(message.channel, "Hehe, that feels nice!")
 
     # Echo command
     if message.content.startswith("+echo"):
