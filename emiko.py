@@ -93,6 +93,7 @@ async def on_message(message):
         else:
             blah = message.content.split(':')
             await client.change_presence(game=discord.Game(name=blah[1], type=1))
+            await message.delete()
 
 
 # Client ready handler
